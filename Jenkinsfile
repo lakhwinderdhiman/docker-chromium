@@ -723,7 +723,7 @@ pipeline {
                   docker tag ghcr.io/linuxserver/lsiodev-buildcache:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER} ${IMAGE}:arm64v8-${META_TAG}
                 fi
                 docker run --rm \
-                --shm-size=1gb \
+                --shm-size=2gb \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 -e IMAGE=\"${IMAGE}\" \
                 -e DOCKER_LOGS_TIMEOUT=\"${CI_DELAY}\" \
