@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  chromium:
+    image: chrome-test # Replace with your image name
+    build:
+      context: . # Use the current directory for the Dockerfile
+    shm_size: 1gb
+    ports:
+      - "3000:3000" # Maps container port 3000 to host port 3000
+    volumes:
+      - /config:/config # Mounts the config directory for persistence
+    restart: unless-stopped
